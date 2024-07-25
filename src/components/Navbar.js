@@ -1,12 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logoImage from '../assets/logo.png';
 
 const Navbar = () => {
   return (
     <nav>
       <ul>
+        <li className="navbar-logo">
+          <img src={logoImage} alt="Hlogie-NutriBlog Logo" />
+          <span><i>Hlogie-NutriBlog</i></span>
+        </li>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about">About Us</Link></li>
+        <li><Link to="/new-post">New Post</Link></li>
         <li><Link to="/login">Login</Link></li>
         <li><Link to="/signup">Sign Up</Link></li>
       </ul>

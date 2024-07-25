@@ -15,28 +15,33 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="homepage">
+    <div>
       <div className="welcome-section">
         <div className="welcome-text">
           <h1>Welcome to Hlogie-NutriBlog</h1>
-          <p>Your ultimate destination for delicious food recipes and nutrition tips. Dive into our collection of mouth-watering dishes and start your culinary journey with us!</p>
+          <p>Your go-to place for delicious and healthy food inspiration!</p>
         </div>
         <div className="welcome-image">
-          <img src="https://example.com/welcome-image.jpg" alt="Welcome to Hlogie-NutriBlog" />
+          <img src="https://example.com/welcome-image.jpg" alt="Welcome" />
         </div>
       </div>
+      <h2>Check out some of our interesting blogs below</h2>
       <div className="posts">
         {posts.map(post => (
           <div key={post.id} className="post">
-            <h2>{post.title}</h2>
+            <h3>{post.title}</h3>
             <img src={post.image} alt={post.title} />
             <p>{post.content.substring(0, 100)}...</p>
             <Link to={`/post/${post.id}`}>Read more</Link>
           </div>
         ))}
       </div>
+      <footer>
+        <p>© 2024. All rights reserved</p>
+      </footer>
     </div>
   );
 };
 
 export default HomePage;
+
