@@ -1,3 +1,4 @@
+// frontend/src/components/HomePage.js
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getPosts } from '../api';
@@ -18,14 +19,14 @@ const HomePage = () => {
     <div>
       <div className="welcome-section">
         <div className="welcome-text">
-          <h1>Welcome to Hlogie-NutriBlog</h1>
-          <p>Your go-to place for delicious and healthy food inspiration!</p>
+          <h1>Welcome to Hlogie-Dev</h1>
+          <p>Your go-to place for the latest updates in the software development world!</p>
         </div>
         <div className="welcome-image">
-          <img src="https://example.com/welcome-image.jpg" alt="Welcome" />
+          <img src="https://example.com/dev-welcome-image.jpg" alt="Welcome" />
         </div>
       </div>
-      <h2>Check out some of our interesting blogs below</h2>
+      <h2>Check out some of our latest blog posts below</h2>
       <div className="posts">
         {posts.map(post => (
           <div key={post.id} className="post">
@@ -44,4 +45,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
