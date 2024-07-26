@@ -23,7 +23,7 @@ const HomePage = () => {
           <p>Your go-to place for the latest updates in the software development world!</p>
         </div>
         <div className="welcome-image">
-          <img src="https://example.com/dev-welcome-image.jpg" alt="Welcome" />
+          <img src="https://th.bing.com/th/id/OIP.DBR1UOY4xaZpjvJuw7CjrAHaEK?rs=1&pid=ImgDetMain" alt="Welcome" />
         </div>
       </div>
       <h2>Check out some of our latest blog posts below</h2>
