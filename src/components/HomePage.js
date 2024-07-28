@@ -8,8 +8,12 @@ const HomePage = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const data = await getPosts();
-      setPosts(data);
+      try {
+        const data = await getPosts();
+        setPosts(data);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      }
     };
 
     fetchPosts();
@@ -20,14 +24,14 @@ const HomePage = () => {
       <div className="welcome-section">
         <div className="welcome-text">
           <h1>Welcome to Hlogie-Dev</h1>
-          <p>Your go-to place for the latest updates in software development!</p>
+          <p>Your go-to place for the latest updates in the world of Tech !</p>
         </div>
         <div className="welcome-image">
-          <img src="https://example.com/dev-welcome-image.jpg" alt="Welcome" />
+          <img src="https://techenthusiast.com/wp-content/uploads/markus-lb-1.jpg" alt="Welcome" />
         </div>
       </div>
-      <h2>Check out some of our latest blog posts below</h2>
-      <div className="posts">
+      <h2 className="posts-header">Check out some of our latest blog posts below</h2>
+      <div className="posts-grid">
         {posts.map(post => (
           <div key={post.id} className="post">
             <h3>{post.title}</h3>
