@@ -23,8 +23,8 @@ const HomePage = () => {
     <div>
       <div className="welcome-section">
         <div className="welcome-text">
-          <h1>Welcome to Hlogie-Dev</h1>
-          <p>Your go-to place for the latest updates in the world of Tech !</p>
+          <h1>Discover Hlogie-Dev</h1>
+          <p>Your ultimate destination for staying updated with the latest tech trends, news, and in-depth insights from the ever-evolving world of technology.</p>
         </div>
         <div className="welcome-image">
           <img src="https://techenthusiast.com/wp-content/uploads/markus-lb-1.jpg" alt="Welcome" />
