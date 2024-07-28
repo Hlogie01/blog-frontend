@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+// frontend/src/components/HomePage.js
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getPosts } from '../api';
 
@@ -7,39 +8,37 @@ const HomePage = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const fetchedPosts = await getPosts();
-      setPosts(fetchedPosts);
+      const data = await getPosts();
+      setPosts(data);
     };
+
     fetchPosts();
   }, []);
 
   return (
-    <div className="container">
+    <div>
       <div className="welcome-section">
-        <div>
+        <div className="welcome-text">
           <h1>Welcome to Hlogie-Dev</h1>
-          <p>Your source for the latest software development updates.</p>
+          <p>Your go-to place for the latest updates in software development!</p>
         </div>
-        <img src="path/to/your/image.jpg" alt="Welcome" />
+        <div className="welcome-image">
+          <img src="https://example.com/dev-welcome-image.jpg" alt="Welcome" />
+        </div>
       </div>
-
-      <div className="blogs-intro">
-        <p>Check out some of our interesting blogs below:</p>
-      </div>
-
-      <div className="blog-list">
-        {posts.map((post) => (
-          <div key={post.id} className="blog-card">
+      <h2>Check out some of our latest blog posts below</h2>
+      <div className="posts">
+        {posts.map(post => (
+          <div key={post.id} className="post">
+            <h3>{post.title}</h3>
             <img src={post.image} alt={post.title} />
-            <h2>{post.title}</h2>
             <p>{post.content.substring(0, 100)}...</p>
-            <Link to={`/posts/${post.id}`}>Read more</Link>
+            <Link to={`/post/${post.id}`}>Read more</Link>
           </div>
         ))}
       </div>
-
       <footer>
-        © 2024. All rights reserved.
+        <p>© 2024. All rights reserved</p>
       </footer>
     </div>
   );

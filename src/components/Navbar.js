@@ -1,7 +1,7 @@
 // frontend/src/components/Navbar.js
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logoImage from '../assets/Nutri Logo-Image.png'; // Make sure you have a logo image in the assets folder
+import logoImage from '../assets/software-development-icon.jpg'; // Make sure you have a logo image in the assets folder
 
 const Navbar = () => {
   return (

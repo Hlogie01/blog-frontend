@@ -1,42 +1,24 @@
-// frontend/src/components/LoginPage.js
-import React, { useState } from 'react';
+// frontend/src/components/Navbar.js
+import React from 'react';
+import { Link } from 'react-router-dom';
+import logoImage from '../assets/software-development-icon.jpg'; // Make sure you have a logo image in the assets folder
 
-const LoginPage = () => {
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    // Add login logic here
-    console.log('Logging in:', { email, password });
-  };
-
+const Navbar = () => {
   return (
-    <div className="login-page">
-      <h1>Login</h1>
-      <form onSubmit={handleLogin}>
-        <div>
-          <label>Email:</label>
-          <input 
-            type="email" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)} 
-            required 
-          />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input 
-            type="password" 
-            value={password} 
-            onChange={(e) => setPassword(e.target.value)} 
-            required 
-          />
-        </div>
-        <button type="submit">Login</button>
-      </form>
-    </div>
+    <nav>
+      <ul>
+        <li className="navbar-logo">
+          <img src={logoImage} alt="Hlogie-Dev Logo" />
+          <span><i>Hlogie-Dev</i></span>
+        </li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/about">About Us</Link></li>
+        <li><Link to="/new-post">New Post</Link></li>
+        <li><Link to="/login">Login</Link></li>
+        <li><Link to="/signup">Sign Up</Link></li>
+      </ul>
+    </nav>
   );
 };
 
-export default LoginPage;
+export default Navbar;

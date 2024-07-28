@@ -1,26 +1,45 @@
-/* Reset some basic elements for better cross-browser consistency */
-* {
+/* frontend/src/styles.css */
+
+/* General Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  background-color: #eef2f5;
 }
 
-/* Apply a font family for the whole application */
-body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
+h1, h2, h3, h4, h5, h6 {
+  color: #343a40;
 }
 
-/* Navbar styling */
-.navbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem;
-  background-color: #333;
+p {
+  color: #6c757d;
+}
+
+/* Navbar Styles */
+nav {
+  background-color: #343a40;
   color: white;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
 }
 
 .navbar-logo {
@@ -31,192 +50,139 @@ body {
 .navbar-logo img {
   width: 40px;
   height: 40px;
-  margin-right: 0.5rem;
+  margin-right: 10px;
 }
 
-.navbar-logo h1 {
-  font-size: 1.5rem;
+.navbar-logo span {
   font-style: italic;
+  font-size: 20px;
 }
 
-.navbar-links {
-  list-style: none;
-  display: flex;
-  align-items: center;
-}
-
-.navbar-links li {
-  margin-left: 1rem;
-}
-
-.navbar-links li a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-.navbar-links li a:hover {
-  text-decoration: underline;
-}
-
-/* Container for the main content */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-/* Welcome section styling */
+/* Welcome Section Styles */
 .welcome-section {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background-color: #fff;
-  padding: 2rem;
-  margin-bottom: 2rem;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.welcome-text {
+  max-width: 50%;
+}
+
+.welcome-text h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.welcome-text p {
+  font-size: 18px;
+}
+
+.welcome-image img {
+  width: 400px;
+  height: auto;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.welcome-section h1 {
-  font-size: 2.5rem;
-  color: #333;
+/* Posts Styles */
+.posts {
+  padding: 20px;
 }
 
-.welcome-section img {
-  max-width: 400px;
-  border-radius: 10px;
-}
-
-/* Blogs introduction text */
-.blogs-intro {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
+.posts h2 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Blog post styling */
-.blog-list {
+.posts-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 20px;
 }
 
-.blog-card {
+.post {
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
-  transition: transform 0.3s;
+  padding: 20px;
+  margin: 0;
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.blog-card:hover {
-  transform: translateY(-5px);
+.post h3 {
+  margin: 0 0 10px 0;
 }
 
-.blog-card img {
+.post img {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-
-.blog-card h2 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.blog-card p {
-  font-size: 1rem;
-  color: #666;
-}
-
-/* Comment section styling */
-.post-page {
-  background-color: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.post-page img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-
-.post-page h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.post-page p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #555;
-}
-
-.comments-section {
-  margin-top: 2rem;
-}
-
-.comments-section h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-.comments-section ul {
-  list-style: none;
-}
-
-.comments-section ul li {
-  background-color: #f4f4f4;
-  padding: 1rem;
-  margin-bottom: 1rem;
   border-radius: 5px;
+  margin-bottom: 10px;
 }
 
-.comment-form {
-  margin-top: 2rem;
+.post p {
+  font-size: 14px;
+  flex-grow: 1;
 }
 
-.comment-form label {
+.post a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.post a:hover {
+  text-decoration: underline;
+}
+
+/* Form Styles */
+form {
+  padding: 20px;
+}
+
+form div {
+  margin-bottom: 10px;
+}
+
+form label {
   display: block;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 5px;
 }
 
-.comment-form textarea {
+form input, form textarea {
   width: 100%;
-  height: 100px;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
+  padding: 8px;
+  border: 1px solid #ced4da;
   border-radius: 5px;
-  border: 1px solid #ddd;
 }
 
-.comment-form button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: #333;
+form button {
+  background-color: #007bff;
   color: white;
   border: none;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.comment-form button:hover {
-  background-color: #555;
+form button:hover {
+  background-color: #0056b3;
 }
 
-/* Footer styling */
+/* Footer Styles */
 footer {
-  text-align: center;
-  padding: 2rem 0;
-  background-color: #333;
+  background-color: #343a40;
   color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
