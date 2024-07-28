@@ -1,4 +1,4 @@
-// frontend/src/api.js
+// frontend/src/api/index.js
 
 const API_URL = 'http://localhost:5000/api/posts';
 
@@ -28,7 +28,7 @@ export const getPost = async (id) => {
   }
 };
 
-export const addPost = async (post) => {
+export const createPost = async (post) => {
   try {
     const response = await fetch(API_URL, {
       method: 'POST',

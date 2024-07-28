@@ -1,35 +1,43 @@
-// frontend/src/components/HomePage.js
-import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { getPosts } from '../api';
+// frontend/src/components/NewPostForm.js
+import React, { useState } from 'react';
+import { addPost } from '../api';
 
-const HomePage = () => {
-  const [posts, setPosts] = useState([]);
+const NewPostForm = () => {
+  const [title, setTitle] = useState('');
+  const [content, setContent] = useState('');
+  const [image, setImage] = useState('');
 
-  useEffect(() => {
-    const fetchPosts = async () => {
-      const data = await getPosts();
-      setPosts(data);
-    };
-
-    fetchPosts();
-  }, []);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newPost = { id: Date.now().toString(), title, content, image, comments: [] };
+    await addPost(newPost);
+    setTitle('');
+    setContent('');
+    setImage('');
+  };
 
   return (
-    <div>
-      <h1>Hlogie-NutriBlog</h1>
-      <div className="posts">
-        {posts.map(post => (
-          <div key={post.id} className="post">
-            <h2>{post.title}</h2>
-            <img src={post.image} alt={post.title} />
-            <p>{post.content.substring(0, 100)}...</p>
-            <Link to={`/post/${post.id}`}>Read more</Link>
-          </div>
-        ))}
-      </div>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={title}
+        onChange={(e) => setTitle(e.target.value)}
+        placeholder="Title"
+      />
+      <input
+        type="text"
+        value={image}
+        onChange={(e) => setImage(e.target.value)}
+        placeholder="Image URL"
+      />
+      <textarea
+        value={content}
+        onChange={(e) => setContent(e.target.value)}
+        placeholder="Content"
+      />
+      <button type="submit">Add Post</button>
+    </form>
   );
 };
 
-export default HomePage;
+export default NewPostForm;

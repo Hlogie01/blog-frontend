@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getPosts, addComment } from '../api';
+import { getPost, addComment } from '../api';
 
 const PostPage = () => {
   const { id } = useParams();
@@ -10,12 +10,10 @@ const PostPage = () => {
 
   useEffect(() => {
     const fetchPost = async () => {
-      const posts = await getPosts();
-      const post = posts.find(p => p.id === id);
-      setPost(post);
-      setComments(post.comments);
+      const fetchedPost = await getPost(id);
+      setPost(fetchedPost);
+      setComments(fetchedPost.comments || []);
     };
-
     fetchPost();
   }, [id]);
 
@@ -30,25 +28,32 @@ const PostPage = () => {
   if (!post) return <div>Loading...</div>;
 
   return (
-    <div>
-      <h1>{post.title}</h1>
-      <img src={post.image} alt={post.title} />
-      <p>{post.content}</p>
-      <h3>Comments</h3>
-      <ul>
-        {comments.map((comment, index) => (
-          <li key={index}>{comment.text}</li>
-        ))}
-      </ul>
-      <form onSubmit={handleCommentSubmit}>
-        <input
-          type="text"
-          value={comment}
-          onChange={(e) => setComment(e.target.value)}
-          placeholder="Add a comment"
-        />
-        <button type="submit">Submit</button>
-      </form>
+    <div className="container">
+      <div className="post-page">
+        <h2>{post.title}</h2>
+        <img src={post.image} alt={post.title} />
+        <p>{post.content}</p>
+        <hr />
+        <div className="comments-section">
+          <h3>Comments</h3>
+          <ul>
+            {comments.map((comment, index) => (
+              <li key={index}>{comment.text}</li>
+            ))}
+          </ul>
+        </div>
+        <form className="comment-form" onSubmit={handleCommentSubmit}>
+          <div>
+            <label>Leave a comment:</label>
+            <textarea
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit">Add Comment</button>
+        </form>
+      </div>
     </div>
   );
 };

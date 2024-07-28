@@ -1,5 +1,4 @@
-// frontend/src/components/HomePage.js
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getPosts } from '../api';
 
@@ -8,37 +7,39 @@ const HomePage = () => {
 
   useEffect(() => {
     const fetchPosts = async () => {
-      const data = await getPosts();
-      setPosts(data);
+      const fetchedPosts = await getPosts();
+      setPosts(fetchedPosts);
     };
-
     fetchPosts();
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <div className="welcome-section">
-        <div className="welcome-text">
+        <div>
           <h1>Welcome to Hlogie-Dev</h1>
-          <p>Your go-to place for the latest updates in the software development world!</p>
+          <p>Your source for the latest software development updates.</p>
         </div>
-        <div className="welcome-image">
-          <img src="https://th.bing.com/th/id/OIP.DBR1UOY4xaZpjvJuw7CjrAHaEK?rs=1&pid=ImgDetMain" alt="Welcome" />
-        </div>
+        <img src="path/to/your/image.jpg" alt="Welcome" />
       </div>
-      <h2>Check out some of our latest blog posts below</h2>
-      <div className="posts">
-        {posts.map(post => (
-          <div key={post.id} className="post">
-            <h3>{post.title}</h3>
+
+      <div className="blogs-intro">
+        <p>Check out some of our interesting blogs below:</p>
+      </div>
+
+      <div className="blog-list">
+        {posts.map((post) => (
+          <div key={post.id} className="blog-card">
             <img src={post.image} alt={post.title} />
+            <h2>{post.title}</h2>
             <p>{post.content.substring(0, 100)}...</p>
-            <Link to={`/post/${post.id}`}>Read more</Link>
+            <Link to={`/posts/${post.id}`}>Read more</Link>
           </div>
         ))}
       </div>
+
       <footer>
-        <p>© 2024. All rights reserved</p>
+        © 2024. All rights reserved.
       </footer>
     </div>
   );
