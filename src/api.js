@@ -1,16 +1,14 @@
-// frontend/src/api.js
-
-const API_URL = 'http://localhost:5000/api/posts';
+const API_URL = "http://localhost:5000/posts";
 
 export const getPosts = async () => {
   try {
     const response = await fetch(API_URL);
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error("Network response was not ok");
     }
     return await response.json();
   } catch (error) {
-    console.error('Error fetching posts:', error);
+    console.error("Error fetching posts:", error);
     return [];
   }
 };
@@ -19,11 +17,11 @@ export const getPost = async (id) => {
   try {
     const response = await fetch(`${API_URL}/${id}`);
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error("Network response was not ok");
     }
     return await response.json();
   } catch (error) {
-    console.error('Error fetching post:', error);
+    console.error("Error fetching post:", error);
     return null;
   }
 };
@@ -31,18 +29,18 @@ export const getPost = async (id) => {
 export const addPost = async (post) => {
   try {
     const response = await fetch(API_URL, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(post),
     });
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error("Network response was not ok");
     }
     return await response.json();
   } catch (error) {
-    console.error('Error creating post:', error);
+    console.error("Error creating post:", error);
     return null;
   }
 };
@@ -50,18 +48,18 @@ export const addPost = async (post) => {
 export const addComment = async (postId, comment) => {
   try {
     const response = await fetch(`${API_URL}/${postId}/comments`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(comment),
     });
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error("Network response was not ok");
     }
     return await response.json();
   } catch (error) {
-    console.error('Error adding comment:', error);
+    console.error("Error adding comment:", error);
     return null;
   }
 };

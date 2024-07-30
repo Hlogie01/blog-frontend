@@ -1,13 +1,13 @@
-// frontend/src/index.js
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import "./styles.css";
 
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import './styles.css';
+const root = ReactDOM.createRoot(document.getElementById("root"));
 
-ReactDOM.render(
+// Render the App component
+root.render(
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );

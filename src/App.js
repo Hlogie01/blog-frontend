@@ -1,14 +1,12 @@
-// frontend/src/App.js
-
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import HomePage from './components/HomePage';
-import AboutUs from './components/AboutUs';
-import NewPost from './components/NewPost';
-import PostPage from './components/PostPage';
-import LoginPage from './components/LoginPage';
-import SignupPage from './components/SignupPage';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import HomePage from "./components/HomePage";
+import AboutUs from "./components/AboutUs";
+import NewPost from "./components/NewPost";
+import PostPage from "./components/PostPage";
+import LoginPage from "./components/LoginPage";
+import SignupPage from "./components/SignupPage";
 
 const App = () => {
   return (
