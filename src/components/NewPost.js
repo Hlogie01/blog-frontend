@@ -1,20 +1,19 @@
-// frontend/src/components/NewPost.js
-
-import React, { useState } from 'react';
-import { addPost } from '../api';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from "react";
+import { addPost } from "../api";
+import { useNavigate } from "react-router-dom";
+import "../styles/form.css";
 
 const NewPost = () => {
-  const [title, setTitle] = useState('');
-  const [content, setContent] = useState('');
-  const [image, setImage] = useState('');
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [image, setImage] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newPost = { title, content, image };
     await addPost(newPost);
-    navigate('/');
+    navigate("/");
   };
 
   return (

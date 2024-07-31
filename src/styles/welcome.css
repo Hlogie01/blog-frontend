@@ -1,0 +1,153 @@
+.welcome {
+  margin-top: 40px;
+  margin: 60px auto;
+  max-width: 80%;
+}
+
+.posts-header {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  max-width: 50%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.welcome-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #ffbb5c;
+  border: 4px solid black;
+  border-radius: 5px;
+  margin: 20px;
+}
+
+.welcome-text {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.welcome-text-header {
+  margin-bottom: 40px;
+}
+
+.welcome-text-header h1 {
+  font-size: 36px;
+  margin: 0;
+}
+
+.welcome-text-content {
+  padding: 0 20px;
+}
+
+.welcome-text-content p {
+  font-size: 18px;
+  margin: 0;
+}
+
+.welcome-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.welcome-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .welcome {
+    margin-top: 20px;
+    margin: 20px auto;
+    max-width: 90%;
+  }
+
+  .welcome-section {
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+  }
+
+  .welcome-text {
+    max-width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .welcome-text-header {
+    margin-bottom: 20px;
+  }
+
+  .welcome-text-header h1 {
+    font-size: 28px;
+  }
+
+  .welcome-text-content p {
+    font-size: 16px;
+  }
+
+  .welcome-image {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .welcome-image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.posts {
+  padding: 20px;
+}
+
+.posts h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.post {
+  background-color: #ffbb5c;
+  padding: 20px;
+  margin: 0;
+  border: 2px solid black;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post h3 {
+  margin: 0 0 10px 0;
+}
+
+.post img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.post p {
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+.post a {
+  color: #c63d2f;
+  text-decoration: none;
+}
+
+.post a:hover {
+  text-decoration: underline;
+}

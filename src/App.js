@@ -5,8 +5,6 @@ import HomePage from "./components/HomePage";
 import AboutUs from "./components/AboutUs";
 import NewPost from "./components/NewPost";
 import PostPage from "./components/PostPage";
-import LoginPage from "./components/LoginPage";
-import SignupPage from "./components/SignupPage";
 
 const App = () => {
   return (
@@ -18,8 +16,6 @@ const App = () => {
           <Route path="/about" element={<AboutUs />} />
           <Route path="/new-post" element={<NewPost />} />
           <Route path="/post/:id" element={<PostPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/signup" element={<SignupPage />} />
         </Routes>
       </div>
     </Router>

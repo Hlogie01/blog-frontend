@@ -5,7 +5,6 @@ import "./styles.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-// Render the App component
 root.render(
   <React.StrictMode>
     <App />

@@ -1,0 +1,45 @@
+.about-us {
+  margin-top: 60px;
+  margin: 60px auto;
+  max-width: 80%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.about-us h1 {
+  font-size: 36px;
+  margin: 0 0 20px;
+  text-align: center;
+  position: relative;
+}
+
+.about-us h1::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 3px;
+  background-color: #ffbb5c;
+  margin: 10px auto 0;
+}
+
+.about-us p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+@media (max-width: 768px) {
+  .about-us {
+    margin: 20px auto;
+    max-width: 90%;
+    padding: 15px;
+  }
+
+  .about-us h1 {
+    font-size: 28px;
+  }
+
+  .about-us p {
+    font-size: 16px;
+  }
+}

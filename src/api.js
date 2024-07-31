@@ -63,3 +63,18 @@ export const addComment = async (postId, comment) => {
     return null;
   }
 };
+
+export const deleteComments = async (postId) => {
+  try {
+    const response = await fetch(`${API_URL}/${postId}/comments`, {
+      method: "DELETE",
+    });
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return await response.json();
+  } catch (error) {
+    console.error("Error deleting comments:", error);
+    return null;
+  }
+};
